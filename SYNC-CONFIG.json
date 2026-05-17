@@ -1,0 +1,70 @@
+{
+  "sync_config": {
+    "repo_url": "https://github.com/pengjie666/pojet-quant-dashboard-design.git",
+    "branch": "master",
+    "sync_interval": "on_change",
+    "auto_push": true,
+    "auto_pull": true,
+    "sync_files": [
+      "src/index.css",
+      "DESIGN_SYSTEM.md",
+      "10-ROUNDS-OPTIMIZATION.md",
+      "CODEX-SYNC.json",
+      "CODEX-SYNC-SUMMARY.md"
+    ],
+    "codex_operations": [
+      "npm install",
+      "npm run build",
+      "验证样式",
+      "测试响应式"
+    ],
+    "git_config": {
+      "user.name": "BitFun",
+      "user.email": "bitfun@codex.dev",
+      "commit_message_format": "设计优化同步 - {date}"
+    }
+  },
+  "sync_flow": {
+    "bitfun_to_github": {
+      "description": "BitFun 推送设计优化到 GitHub",
+      "commands": [
+        "git add src/index.css DESIGN_SYSTEM.md 10-ROUNDS-OPTIMIZATION.md CODEX-SYNC.json",
+        "git commit -m '设计优化同步'",
+        "git push origin master"
+      ]
+    },
+    "github_to_codex": {
+      "description": "Codex 从 GitHub 拉取设计优化",
+      "commands": [
+        "git pull origin master",
+        "npm install",
+        "npm run build"
+      ]
+    },
+    "codex_to_github": {
+      "description": "Codex 推送云端操作结果到 GitHub",
+      "commands": [
+        "git add .",
+        "git commit -m '云端操作同步'",
+        "git push origin master"
+      ]
+    },
+    "github_to_bitfun": {
+      "description": "BitFun 从 GitHub 拉取最新代码",
+      "commands": [
+        "git pull origin master"
+      ]
+    }
+  },
+  "sync_status": {
+    "last_sync": "2026-05-17 08:08:22",
+    "sync_direction": "bitfun_to_github",
+    "sync_state": "completed",
+    "pending_operations": [
+      "codex_pull",
+      "codex_execute",
+      "codex_push",
+      "bitfun_pull"
+    ]
+  }
+}
