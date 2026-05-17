@@ -1,0 +1,617 @@
+{
+  "sync_id": "pojet-capital-design-v1.0",
+  "sync_date": "2026-05-17",
+  "sync_status": "completed",
+  "total_rounds": 10,
+  "files": [
+    {
+      "path": "src/index.css",
+      "size": "31804",
+      "lines": "1209",
+      "status": "modified",
+      "description": "核心样式系统 - 10轮设计优化"
+    },
+    {
+      "path": "DESIGN_SYSTEM.md",
+      "size": "8742",
+      "lines": "264",
+      "status": "modified",
+      "description": "设计系统文档"
+    },
+    {
+      "path": "10-ROUNDS-OPTIMIZATION.md",
+      "size": "0",
+      "lines": "0",
+      "status": "created",
+      "description": "10轮优化详细配置清单"
+    }
+  ],
+  "optimizations": {
+    "round_1": {
+      "name": "字体系统",
+      "changes": [
+        "加载 Google Fonts: Inter, Noto Sans SC, JetBrains Mono",
+        "定义字体栈: --font-sans, --font-mono",
+        "设置字体权重: 400-900",
+        "设置字体大小层次: 11px-3.25rem"
+      ],
+      "parameters": {
+        "font_sans": "Inter, Noto Sans SC, Microsoft YaHei, PingFang SC, ui-sans-serif, system-ui, sans-serif",
+        "font_mono": "JetBrains Mono, ui-monospace, SFMono-Regular, monospace",
+        "weights": [400, 500, 600, 700, 800, 900],
+        "sizes": {
+          "xs": "11px",
+          "sm": "12-13px",
+          "md": "13px",
+          "lg": "15px",
+          "xl": "18px",
+          "2xl": "clamp(2rem, 4vw, 3.25rem)"
+        }
+      }
+    },
+    "round_2": {
+      "name": "配色方案",
+      "changes": [
+        "主色从 #6366F1 (Indigo) 改为 #7DD3FC (Sky)",
+        "次色从 #8B5CF6 改为 #38BDF8",
+        "盈利色从 #10B981 改为 #FB7185",
+        "亏损色从 #FF3B30 改为 #6EE7B7",
+        "背景色从 #0F1117 改为 #05070D"
+      ],
+      "parameters": {
+        "brand_primary": "#7DD3FC",
+        "brand_secondary": "#38BDF8",
+        "brand_tertiary": "#A78BFA",
+        "brand_glow": "rgba(125, 211, 252, 0.25)",
+        "semantic_profit": "#FB7185",
+        "semantic_loss": "#6EE7B7",
+        "semantic_warning": "#FBBF24",
+        "semantic_info": "#7DD3FC",
+        "semantic_success": "#6EE7B7",
+        "bg_page": "#05070D",
+        "bg_sidebar": "#080B12",
+        "bg_card_1": "#151821",
+        "bg_card_2": "#111420",
+        "bg_card_3": "#1A1D27",
+        "bg_hover": "rgba(125, 211, 252, 0.06)",
+        "border_default": "rgba(255, 255, 255, 0.08)",
+        "border_brand": "rgba(125, 211, 252, 0.35)",
+        "border_danger": "rgba(251, 113, 133, 0.25)",
+        "border_warning": "rgba(251, 191, 36, 0.25)",
+        "text_primary": "#FFFFFF",
+        "text_secondary": "#94A3B8",
+        "text_tertiary": "#64748B",
+        "text_brand": "#7DD3FC",
+        "text_profit": "#FB7185",
+        "text_loss": "#6EE7B7",
+        "shadow_card": "0 4px 24px rgba(0, 0, 0, 0.25)",
+        "shadow_float": "0 8px 32px rgba(0, 0, 0, 0.4)",
+        "shadow_brand": "0 0 16px rgba(125, 211, 252, 0.2)",
+        "ease_terminal": "cubic-bezier(0.16, 1, 0.3, 1)"
+      }
+    },
+    "round_3": {
+      "name": "组件基础优化",
+      "changes": [
+        "优化 .surface-panel: border-radius: 16px, box-shadow: var(--shadow-card)",
+        "优化 .surface-card: border-radius: 12px",
+        "优化 .surface-card-hover: transition: all 200ms",
+        "优化 .section-title: font-size: 15px, font-weight: 700",
+        "优化 .section-subtitle: font-size: 13px, font-weight: 600"
+      ],
+      "parameters": {
+        "surface_panel": {
+          "border_radius": "16px",
+          "border": "1px solid var(--border-default)",
+          "background": "var(--bg-card-1)",
+          "box_shadow": "var(--shadow-card), inset 0 1px 0 rgba(255, 255, 255, 0.04)",
+          "transition": "all 200ms var(--ease-terminal)"
+        },
+        "surface_card": {
+          "border_radius": "12px",
+          "border": "1px solid var(--border-default)",
+          "background": "var(--bg-card-2)"
+        },
+        "surface_card_hover": {
+          "border_radius": "12px",
+          "border": "1px solid var(--border-default)",
+          "background": "var(--bg-card-2)",
+          "transition": "all 200ms",
+          "hover_border": "var(--border-brand)",
+          "hover_bg": "var(--bg-hover)"
+        }
+      }
+    },
+    "round_4": {
+      "name": "按钮和输入框优化",
+      "changes": [
+        "优化 .toolbar-button: height: 36px, border-radius: 12px",
+        "优化 .icon-button: width: 40px, height: 40px, border-radius: 12px",
+        "优化 .login-input: height: 48px, border-radius: 12px",
+        "优化 .login-btn: height: 52px, border-radius: 16px",
+        "添加 .login-btn:hover: transform: translateY(-1px)"
+      ],
+      "parameters": {
+        "toolbar_button": {
+          "height": "36px",
+          "border_radius": "12px",
+          "border": "1px solid var(--border-default)",
+          "background": "var(--bg-card-2)",
+          "font_size": "12px",
+          "font_weight": "700",
+          "transition": "all 200ms"
+        },
+        "icon_button": {
+          "width": "40px",
+          "height": "40px",
+          "border_radius": "12px",
+          "border": "1px solid var(--border-default)",
+          "background": "var(--bg-card-2)",
+          "transition": "all 200ms"
+        },
+        "login_input": {
+          "height": "48px",
+          "border_radius": "12px",
+          "border": "1px solid rgba(125, 211, 252, 0.18)",
+          "background": "rgba(255, 255, 255, 0.04)",
+          "font_size": "13px",
+          "font_weight": "600",
+          "transition": "all 200ms"
+        },
+        "login_btn": {
+          "height": "52px",
+          "border_radius": "16px",
+          "background": "linear-gradient(135deg, #FFFFFF 0%, #7DD3FC 100%)",
+          "box_shadow": "0 4px 20px rgba(125, 211, 252, 0.35)",
+          "font_size": "13px",
+          "font_weight": "900",
+          "letter_spacing": "0.18em",
+          "text_transform": "uppercase",
+          "transition": "all 200ms",
+          "hover_transform": "translateY(-1px)",
+          "hover_shadow": "0 8px 28px rgba(125, 211, 252, 0.45)"
+        }
+      }
+    },
+    "round_5": {
+      "name": "导航和侧边栏优化",
+      "changes": [
+        "优化 .design-sidebar: 添加渐变背景",
+        "优化 .nav-link: border-radius: 12px, transition: all 200ms",
+        "优化 .nav-link-active: background: rgba(125, 211, 252, 0.08)",
+        "优化 .nav-link-icon: width: 28px, height: 28px, border-radius: 9px",
+        "添加 .nav-live-dot: 实时状态点动画"
+      ],
+      "parameters": {
+        "design_sidebar": {
+          "background": "linear-gradient(180deg, rgba(125, 211, 252, 0.04), transparent 24%), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(180deg, #080B12 0%, #05070D 100%)",
+          "background_size": "auto, 48px 48px, auto"
+        },
+        "nav_link": {
+          "display": "flex",
+          "align_items": "center",
+          "gap": "10px",
+          "padding": "9px 11px",
+          "border_radius": "12px",
+          "border": "1px solid transparent",
+          "color": "var(--text-secondary)",
+          "font_size": "13px",
+          "font_weight": "600",
+          "transition": "all 200ms",
+          "hover_background": "rgba(255, 255, 255, 0.04)",
+          "hover_color": "var(--text-primary)",
+          "hover_border": "rgba(255, 255, 255, 0.04)"
+        },
+        "nav_link_active": {
+          "background": "rgba(125, 211, 252, 0.08)",
+          "border_color": "rgba(125, 211, 252, 0.18)",
+          "color": "var(--text-primary)"
+        },
+        "nav_link_icon": {
+          "width": "28px",
+          "height": "28px",
+          "border_radius": "9px",
+          "transition": "all 200ms",
+          "border": "1px solid transparent"
+        },
+        "nav_live_dot": {
+          "width": "6px",
+          "height": "6px",
+          "border_radius": "50%",
+          "background": "var(--semantic-success)",
+          "box_shadow": "0 0 12px rgba(16, 185, 129, 0.7)",
+          "animation": "livePulse 2s ease-in-out infinite"
+        }
+      }
+    },
+    "round_6": {
+      "name": "卡片和数据块优化",
+      "changes": [
+        "优化 .data-tile: border-radius: 16px, padding: 16px",
+        "优化 .metric-card: border-radius: 16px, padding: 20px",
+        "添加 .metric-card-positive: border-color: rgba(251, 113, 133, 0.18)",
+        "添加 .metric-card-negative: border-color: rgba(110, 231, 183, 0.18)",
+        "添加 .metric-card-featured: grid-column: span 2",
+        "优化 .metric-value: font-size: clamp(1.25rem, 2.5vw, 1.75rem)"
+      ],
+      "parameters": {
+        "data_tile": {
+          "border_radius": "16px",
+          "border": "1px solid rgba(255, 255, 255, 0.08)",
+          "background": "rgba(255, 255, 255, 0.035)",
+          "padding": "16px",
+          "box_shadow": "inset 0 1px 0 rgba(255, 255, 255, 0.04)"
+        },
+        "metric_card": {
+          "position": "relative",
+          "overflow": "hidden",
+          "border_radius": "16px",
+          "border": "1px solid var(--border-default)",
+          "background": "var(--bg-card-1)",
+          "padding": "20px",
+          "box_shadow": "0 2px 12px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.03)",
+          "transition": "all 200ms"
+        },
+        "metric_card_positive": {
+          "border_color": "rgba(251, 113, 133, 0.18)"
+        },
+        "metric_card_negative": {
+          "border_color": "rgba(110, 231, 183, 0.18)"
+        },
+        "metric_card_featured": {
+          "grid_column": "span 2",
+          "box_shadow": "0 0 0 1px rgba(125, 211, 252, 0.15), 0 4px 24px rgba(125, 211, 252, 0.06)"
+        },
+        "metric_value": {
+          "font_family": "var(--font-mono)",
+          "font_weight": "900",
+          "line_height": "1",
+          "letter_spacing": "-0.02em",
+          "color": "var(--text-primary)",
+          "font_size": "clamp(1.25rem, 2.5vw, 1.75rem)"
+        },
+        "metric_label": {
+          "font_size": "11px",
+          "font_weight": "900",
+          "text_transform": "uppercase",
+          "letter_spacing": "0.16em",
+          "color": "var(--text-tertiary)"
+        },
+        "metric_icon": {
+          "width": "40px",
+          "height": "40px",
+          "border_radius": "16px",
+          "border": "1px solid rgba(255, 255, 255, 0.08)",
+          "background": "rgba(255, 255, 255, 0.04)",
+          "display": "flex",
+          "align_items": "center",
+          "justify_content": "center",
+          "color": "var(--text-secondary)",
+          "box_shadow": "inset 0 1px 0 rgba(255, 255, 255, 0.05)"
+        }
+      }
+    },
+    "round_7": {
+      "name": "Hero面板和市场面板优化",
+      "changes": [
+        "优化 .hero-panel: display: grid, gap: 20px",
+        "优化 .hero-copy h1: font-size: clamp(2rem, 4vw, 3.25rem)",
+        "优化 .hero-market-card: border-radius: 22px, padding: 20px",
+        "优化 .hero-mini-chart: height: 144px, border-radius: 22px",
+        "优化 .hero-market-list: display: grid, gap: 8px"
+      ],
+      "parameters": {
+        "hero_panel": {
+          "display": "grid",
+          "gap": "20px",
+          "grid_template_columns": "minmax(0, 1.08fr) minmax(320px, 0.92fr)",
+          "padding": "24px",
+          "border_radius": "22px",
+          "border": "1px solid rgba(255, 255, 255, 0.08)",
+          "background": "linear-gradient(135deg, rgba(125, 211, 252, 0.03), transparent 48%, rgba(167, 139, 250, 0.03))",
+          "box_shadow": "inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 18px 48px rgba(0, 0, 0, 0.38)"
+        },
+        "hero_copy_h1": {
+          "font_size": "clamp(2rem, 4vw, 3.25rem)",
+          "font_weight": "900",
+          "line_height": "1.04",
+          "letter_spacing": "-0.02em",
+          "color": "var(--text-primary)"
+        },
+        "hero_market_card": {
+          "border_radius": "22px",
+          "border": "1px solid rgba(255, 255, 255, 0.08)",
+          "background": "linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02))",
+          "box_shadow": "inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 18px 48px rgba(0, 0, 0, 0.38)",
+          "display": "flex",
+          "flex_direction": "column",
+          "gap": "16px",
+          "padding": "20px"
+        },
+        "hero_mini_chart": {
+          "display": "flex",
+          "align_items": "flex-end",
+          "gap": "8px",
+          "height": "144px",
+          "border_radius": "22px",
+          "border": "1px solid rgba(255, 255, 255, 0.08)",
+          "background": "rgba(0, 0, 0, 0.25)",
+          "padding": "24px 16px 16px",
+          "box_shadow": "inset 0 1px 0 rgba(255, 255, 255, 0.04)"
+        },
+        "hero_market_list": {
+          "display": "grid",
+          "gap": "8px"
+        }
+      }
+    },
+    "round_8": {
+      "name": "认证屏幕优化",
+      "changes": [
+        "优化 .auth-card-shell: width: min(350px, 100vw - 2rem)",
+        "添加 .glass: backdrop-filter: blur(24px)",
+        "优化 .login-input: border-color: rgba(125, 211, 252, 0.18)",
+        "优化 .login-btn: background: linear-gradient(135deg, #FFFFFF 0%, #7DD3FC 100%)"
+      ],
+      "parameters": {
+        "auth_card_shell": {
+          "width": "min(350px, 100vw - 2rem)",
+          "max_width": "calc(100vw - 2rem)"
+        },
+        "auth_card_shell_640": {
+          "width": "440px",
+          "max_width": "440px"
+        },
+        "glass": {
+          "border": "1px solid rgba(255, 255, 255, 0.1)",
+          "background": "rgba(255, 255, 255, 0.06)",
+          "backdrop_filter": "blur(24px)"
+        }
+      }
+    },
+    "round_9": {
+      "name": "动画系统优化",
+      "changes": [
+        "添加 @keyframes pageIn: opacity 0→1, translateY(8px)→0",
+        "添加 @keyframes panelReveal: opacity 0→1, translateY(6px)→0",
+        "添加 @keyframes liveGlow: box-shadow 0→16px rgba(125, 211, 252, 0.12)",
+        "添加 @keyframes riskPulse: box-shadow 0→12px rgba(251, 113, 133, 0.2)",
+        "添加 @keyframes livePulse: box-shadow 4px→12px rgba(16, 185, 129, 0.5→0.8)",
+        "添加 @media (prefers-reduced-motion: reduce): 禁用所有动画"
+      ],
+      "parameters": {
+        "ease_terminal": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "transition_duration": "200ms",
+        "page_in": {
+          "duration": "0.26s",
+          "easing": "var(--ease-terminal)",
+          "from": { "opacity": "0", "transform": "translateY(8px)" },
+          "to": { "opacity": "1", "transform": "translateY(0)" }
+        },
+        "panel_reveal": {
+          "duration": "400ms",
+          "easing": "var(--ease-terminal)",
+          "from": { "opacity": "0", "transform": "translateY(6px)" },
+          "to": { "opacity": "1", "transform": "translateY(0)" }
+        },
+        "live_glow": {
+          "duration": "5s",
+          "easing": "ease-in-out",
+          "from": { "box_shadow": "0 0 0 rgba(125, 211, 252, 0)" },
+          "mid": { "box_shadow": "0 0 16px rgba(125, 211, 252, 0.12)" },
+          "to": { "box_shadow": "0 0 0 rgba(125, 211, 252, 0)" }
+        },
+        "risk_pulse": {
+          "duration": "3s",
+          "easing": "ease-in-out",
+          "from": { "box_shadow": "0 0 0 rgba(251, 113, 133, 0)" },
+          "mid": { "box_shadow": "0 0 12px rgba(251, 113, 133, 0.2)" },
+          "to": { "box_shadow": "0 0 0 rgba(251, 113, 133, 0)" }
+        },
+        "live_pulse": {
+          "duration": "2s",
+          "easing": "ease-in-out",
+          "from": { "box_shadow": "0 0 4px rgba(16, 185, 129, 0.5)" },
+          "mid": { "box_shadow": "0 0 12px rgba(16, 185, 129, 0.8)" },
+          "to": { "box_shadow": "0 0 4px rgba(16, 185, 129, 0.5)" }
+        },
+        "reduced_motion": {
+          "animation_duration": "0.001ms !important",
+          "animation_iteration_count": "1 !important",
+          "scroll_behavior": "auto !important",
+          "transition_duration": "0.001ms !important"
+        }
+      }
+    },
+    "round_10": {
+      "name": "响应式设计优化",
+      "changes": [
+        "添加 @media (max-width: 1279px): hero-panel 单列",
+        "添加 @media (max-width: 1023px): 侧边栏宽度 min(304px, 100vw - 1rem)",
+        "添加 @media (max-width: 767px): 平板优化",
+        "添加 @media (max-width: 480px): 手机优化",
+        "优化 .position-row, .trade-row: flex-direction: row (≥40rem)",
+        "添加 .trade-side-buy, .trade-side-sell, .trade-side-cancel"
+      ],
+      "parameters": {
+        "breakpoints": {
+          "xl": "1279px",
+          "lg": "1023px",
+          "md": "767px",
+          "sm": "480px"
+        },
+        "1279px": {
+          "hero_panel_grid": "1fr",
+          "hero_market_card_min_height": "280px"
+        },
+        "1023px": {
+          "app_shell_height": "100dvh",
+          "app_topbar_height": "64px",
+          "app_topbar_padding": "max(0.75rem, env(safe-area-inset-left))",
+          "design_sidebar_width": "min(304px, 100vw - 1rem)"
+        },
+        "767px": {
+          "app_topbar_min_height": "60px",
+          "app_topbar_padding_inline": "0.625rem",
+          "command_bar_border_radius": "14px",
+          "command_bar_height": "40px",
+          "command_bar_padding_inline": "0.7rem",
+          "command_bar_input_font_size": "12px",
+          "icon_button_border_radius": "14px",
+          "icon_button_width": "2.4rem",
+          "icon_button_height": "2.4rem",
+          "page_scroll_padding": "0.625rem",
+          "page_frame_gap": "0.75rem",
+          "hero_panel_border_radius": "20px",
+          "hero_panel_padding": "1rem",
+          "hero_copy_h1_font_size": "2.35rem",
+          "hero_copy_p_font_size": "0.875rem",
+          "hero_status_grid_grid": "1fr",
+          "hero_position_list_grid": "minmax(0, 1fr) 4.2rem 3.2rem",
+          "hero_market_card_border_radius": "20px",
+          "hero_market_card_min_height": "245px",
+          "hero_market_card_padding": "1rem",
+          "hero_mini_chart_border_radius": "16px",
+          "hero_mini_chart_gap": "0.45rem",
+          "hero_mini_chart_height": "6.5rem",
+          "period_switcher_justify": "space-between",
+          "period_switcher_width": "100%",
+          "position_row_border_radius": "16px",
+          "position_row_padding": "0.9rem",
+          "trade_row_border_radius": "16px",
+          "trade_row_padding": "0.9rem",
+          "data_tile_border_radius": "16px",
+          "data_tile_padding": "0.9rem",
+          "tv_chart_shell_height": "min(var(--tv-chart-height, 340px), 360px)",
+          "tv_chart_shell_border_radius": "18px"
+        },
+        "480px": {
+          "hero_copy_h1_font_size": "2rem",
+          "hero_market_card_header_strong_font_size": "2rem",
+          "eyebrow_pill_letter_spacing": "0.08em",
+          "eyebrow_pill_padding_inline": "0.65rem"
+        },
+        "position_row": {
+          "mobile": {
+            "flex_direction": "column",
+            "gap": "12px"
+          },
+          "desktop": {
+            "flex_direction": "row",
+            "justify_content": "space-between",
+            "align_items": "center"
+          }
+        },
+        "trade_side": {
+          "width": "36px",
+          "height": "36px",
+          "border_radius": "16px",
+          "border": "1px solid rgba(255, 255, 255, 0.08)",
+          "background": "rgba(255, 255, 255, 0.04)",
+          "font_size": "13px",
+          "font_weight": "900",
+          "buy": {
+            "border_color": "rgba(255, 162, 174, 0.25)",
+            "background": "rgba(255, 162, 174, 0.1)",
+            "color": "#FFA2AE"
+          },
+          "sell": {
+            "border_color": "rgba(94, 233, 181, 0.25)",
+            "background": "rgba(94, 233, 181, 0.1)",
+            "color": "#5EE9B5"
+          },
+          "cancel": {
+            "border_color": "rgba(255, 210, 54, 0.25)",
+            "background": "rgba(255, 210, 54, 0.1)",
+            "color": "#FFD236"
+          }
+        }
+      }
+    }
+  },
+  "production_classes": {
+    "brand_card": {
+      "border_radius": "16px",
+      "border": "1px solid rgba(255,255,255,0.06)",
+      "background": "rgba(255,255,255,0.03)",
+      "padding": "12px 14px",
+      "transition": "all 200ms var(--ease-terminal)"
+    },
+    "brand_mark": {
+      "display": "flex",
+      "align_items": "center",
+      "justify_content": "center",
+      "border_radius": "14px",
+      "border": "1px solid rgba(255,255,255,0.12)",
+      "background": "linear-gradient(135deg, rgba(125,211,252,0.08), rgba(255,255,255,0.04))"
+    },
+    "runtime_card": {
+      "border_radius": "12px",
+      "border": "1px solid rgba(255,255,255,0.06)",
+      "background": "rgba(255,255,255,0.03)",
+      "padding": "12px",
+      "transition": "all 200ms var(--ease-terminal)"
+    },
+    "eyebrow_pill": {
+      "display": "inline-flex",
+      "align_items": "center",
+      "gap": "8px",
+      "border": "1px solid rgba(125, 211, 252, 0.25)",
+      "border_radius": "3.4px",
+      "background": "rgba(125, 211, 252, 0.1)",
+      "padding": "6px 12px",
+      "font_weight": "900",
+      "font_size": "11px",
+      "letter_spacing": "0.12em",
+      "text_transform": "uppercase",
+      "color": "var(--brand-primary)"
+    },
+    "period_switcher": {
+      "display": "inline-flex",
+      "border_radius": "16px",
+      "border": "1px solid rgba(255,255,255,0.08)",
+      "background": "rgba(255,255,255,0.035)",
+      "padding": "4px",
+      "width": "fit-content"
+    },
+    "terminal_skin": {
+      "color": "var(--text-secondary)",
+      "background": "linear-gradient(rgba(255,255,255,0.06), rgba(255,255,255,0.02)), #151821d1",
+      "backdrop_filter": "blur(18px)",
+      "box_shadow": "inset 0 1px 0 rgba(255,255,255,0.05), 0 18px 48px rgba(0,0,0,0.38)"
+    }
+  },
+  "css_variables": {
+    "font_sans": "Inter, Noto Sans SC, Microsoft YaHei, PingFang SC, ui-sans-serif, system-ui, sans-serif",
+    "font_mono": "JetBrains Mono, ui-monospace, SFMono-Regular, monospace",
+    "brand_primary": "#7DD3FC",
+    "brand_secondary": "#38BDF8",
+    "brand_tertiary": "#A78BFA",
+    "brand_glow": "rgba(125, 211, 252, 0.25)",
+    "semantic_profit": "#FB7185",
+    "semantic_loss": "#6EE7B7",
+    "semantic_warning": "#FBBF24",
+    "semantic_info": "#7DD3FC",
+    "semantic_success": "#6EE7B7",
+    "bg_page": "#05070D",
+    "bg_sidebar": "#080B12",
+    "bg_card_1": "#151821",
+    "bg_card_2": "#111420",
+    "bg_card_3": "#1A1D27",
+    "bg_hover": "rgba(125, 211, 252, 0.06)",
+    "border_default": "rgba(255, 255, 255, 0.08)",
+    "border_brand": "rgba(125, 211, 252, 0.35)",
+    "border_danger": "rgba(251, 113, 133, 0.25)",
+    "border_warning": "rgba(251, 191, 36, 0.25)",
+    "text_primary": "#FFFFFF",
+    "text_secondary": "#94A3B8",
+    "text_tertiary": "#64748B",
+    "text_brand": "#7DD3FC",
+    "text_profit": "#FB7185",
+    "text_loss": "#6EE7B7",
+    "shadow_card": "0 4px 24px rgba(0, 0, 0, 0.25)",
+    "shadow_float": "0 8px 32px rgba(0, 0, 0, 0.4)",
+    "shadow_brand": "0 0 16px rgba(125, 211, 252, 0.2)",
+    "ease_terminal": "cubic-bezier(0.16, 1, 0.3, 1)"
+  }
+}
